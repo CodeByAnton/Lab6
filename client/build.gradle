@@ -1,0 +1,22 @@
+version = '1.0'
+group = 'com.anton.client'
+
+dependencies {
+    implementation project(':common')
+}
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.anton.client.ClientApp'
+    }
+
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}

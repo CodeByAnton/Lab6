@@ -1,0 +1,4 @@
+version = '1.0'
+group = 'com.anton.common'
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
